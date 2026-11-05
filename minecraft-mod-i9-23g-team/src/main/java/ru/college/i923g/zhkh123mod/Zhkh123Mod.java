@@ -1,4 +1,4 @@
-package ru.college.i923a.zhkh123mod;
+package ru.college.i923g.zhkh123mod;
 
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -11,6 +11,7 @@ public class Zhkh123Mod implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        ModBlocks.initialize();
         LOGGER.info("Проект загружен успешно");
     }
 }
