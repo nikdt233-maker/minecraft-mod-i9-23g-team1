@@ -1,0 +1,25 @@
+// Блок plugins: подключаем плагины Gradle.
+plugins {
+    // Плагин java добавляет задачи компиляции, тестирования и сборки jar
+    // и задаёт стандартную структуру каталогов src/main/java и т.д.
+    id 'java'
+}
+
+// group - идентификатор группы проекта (обычно пакет в обратной записи домена)
+group = 'ru.college.i923a'
+// version - версия проекта. SNAPSHOT означает "разрабатываемая версия"
+version = '1.0-SNAPSHOT'
+
+// repositories - откуда Gradle будет скачивать зависимости
+repositories {
+    // Центральный репозиторий библиотек Maven Central
+    mavenCentral()
+}
+
+// Настройки Java
+java {
+    // toolchain - Gradle использует именно JDK 21 для компиляции проекта
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
