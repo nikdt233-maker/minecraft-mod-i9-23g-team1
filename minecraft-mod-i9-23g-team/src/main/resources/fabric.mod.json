@@ -14,7 +14,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "ru.college.i923a.zhkh123mod.Zhkh123Mod"
+      "ru.college.i923g.zhkh123mod.Zhkh123Mod"
     ]
   },
   "depends": {

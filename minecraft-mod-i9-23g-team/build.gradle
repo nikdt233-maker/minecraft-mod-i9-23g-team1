@@ -1,25 +1,39 @@
-// Блок plugins: подключаем плагины Gradle.
 plugins {
-    // Плагин java добавляет задачи компиляции, тестирования и сборки jar
-    // и задаёт стандартную структуру каталогов src/main/java и т.д.
-    id 'java'
+    id 'fabric-loom' version '1.6-SNAPSHOT'
 }
 
-// group - идентификатор группы проекта (обычно пакет в обратной записи домена)
-group = 'ru.college.i923a'
-// version - версия проекта. SNAPSHOT означает "разрабатываемая версия"
-version = '1.0-SNAPSHOT'
+version = '1.0.0'
+group = 'ru.college.i923g'
 
-// repositories - откуда Gradle будет скачивать зависимости
+base {
+    archivesName = 'zhkh-123mod'
+}
+
 repositories {
-    // Центральный репозиторий библиотек Maven Central
     mavenCentral()
 }
 
-// Настройки Java
-java {
-    // toolchain - Gradle использует именно JDK 21 для компиляции проекта
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+dependencies {
+    minecraft "com.mojang:minecraft:1.21"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:0.19.3"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.102.0+1.21"
+}
+
+processResources {
+    inputs.property "version", project.version
+    filteringCharset "UTF-8"
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
     }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+    it.options.encoding = 'UTF-8'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
