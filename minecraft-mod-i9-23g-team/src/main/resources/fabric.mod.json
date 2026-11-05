@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "zhkh_123mod",
+  "version": "${version}",
+  "name": "ЖКХ_123Mod",
+  "description": "Учебный мод: блок «Батарея», лечащий игрока в радиусе 5 блоков.",
+  "authors": [
+    "Дятчин Н.А.",
+    "Устинов С.А.",
+    "Чечков В.А.",
+    "Шафеев Р.Р."
+  ],
+  "license": "All-Rights-Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "ru.college.i923a.zhkh123mod.Zhkh123Mod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~1.21",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
