@@ -20,10 +20,10 @@ public class ModBlocks {
             BuiltInRegistries.BLOCK, // реестр блоков
             id("battery"),           // идентификатор блока
             new Block(BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.IRON_BLOCK) // берём настройки железного блока
-                    .strength(3.0f, 6.0f)          // прочность 3.0, взрывоустойчивость 6.0
-                    .lightLevel(state -> 8)));     // уровень света 8 (в любом состоянии)
-
+                    .ofFullCopy(Blocks.IRON_BLOCK)
+                    .strength(3.0f, 6.0f)
+                    .lightLevel(state -> 8)
+                    .requiresCorrectToolForDrops()));
     // Предмет-блок: без него блок нельзя держать в руке, получить через /give и поставить.
     // Идентификатор такой же, как у блока.
     public static final Item BATTERY_ITEM = Registry.register(
